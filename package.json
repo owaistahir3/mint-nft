@@ -1,0 +1,16 @@
+{
+  "name": "mint-nft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.17.12",
+    "@solana/web3.js": "^1.73.0",
+    "bs58": "^5.0.0"
+  },
+  "compilerOptions": {
+    "module": "commonjs",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  }
+}
