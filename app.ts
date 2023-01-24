@@ -6,7 +6,7 @@ import bs58 from 'bs58';
 const QUICKNODE_RPC = 'https://ultra-dry-moon.solana-devnet.quiknode.pro/e869d666df1f3fa41871b44d3bddeda24926bcf9/';
 const SOLANA_CONNECTION = new Connection(QUICKNODE_RPC);
 
-let secretKey = bs58.decode("5c5yrymAQ4ZM1pkENxYqyfWmRH1eH9RX2Z8A75opksDCgruJn6bRayQA4yqftydn1GAQzTb25rvh5MiwzHFXhPnw"); //Enter your wallet address here
+let secretKey = bs58.decode("5c5yrymAQ4ZM1pkENxYqyfWmRH1eH9RX2Z8A75opksDCgruJn6bRayQA4yqftydn1GAQzTb25rvh5MiwzHFXhPnw"); //Enter your wallet's Private Key here
 const secret = Keypair.fromSecretKey(secretKey).secretKey
 const WALLET = Keypair.fromSecretKey(new Uint8Array(secret));
 
@@ -20,18 +20,18 @@ const METAPLEX = Metaplex.make(SOLANA_CONNECTION)
 
 const CONFIG = {
     uploadPath: 'uploads/',
-    imgFileName: 'SolanaCogniTest.jpg',
-    imgType: 'image/jpg',
-    imgName: 'Cogni Solana NFT',
-    description: 'Test for Solana NFTs on Cogni Wallet',
+    imgFileName: 'giphy.gif',
+    imgType: 'image/gif',
+    imgName: 'Cogni gif Solana NFT',
+    description: 'Test for Solana gif NFTs on Cogni Wallet',
     attributes: [
-        {trait_type: 'Speed', value: 'Quick'},
-        {trait_type: 'Type', value: 'Pixelated'},
-        {trait_type: 'Background', value: 'Cogni Black'},
-        {trait_type: 'Kali', value: 'Linux'}
+        {trait_type: 'Hera', value: 'Pheri'},
+        {trait_type: 'Type', value: 'Funny'},
+        {trait_type: 'Background', value: 'Song'},
+        {trait_type: 'Babu', value: 'Bhai'}
     ],
     sellerFeeBasisPoints: 500,//500 bp = 5%
-    symbol: 'COGSO',
+    symbol: 'COGI',
     creators: [
         {address: WALLET.publicKey, share: 100}
     ]
@@ -93,7 +93,6 @@ async function main() {
     console.log(`Minting ${CONFIG.imgName} to an NFT in Wallet ${WALLET.publicKey.toBase58()}.`);
     //Step 1 - Upload Image
     const imgUri = await uploadImage(CONFIG.uploadPath, CONFIG.imgFileName);
-    //console.log(`   Image URI:`,imgUri);
     //Step 2 - Upload Metadata
     const metadataUri = await uploadMetadata(imgUri, CONFIG.imgType, CONFIG.imgName, CONFIG.description, CONFIG.attributes); 
     //Step 3 - Mint NFT
