@@ -20,10 +20,10 @@ const METAPLEX = Metaplex.make(SOLANA_CONNECTION)
 
 const CONFIG = {
     uploadPath: 'uploads/',
-    imgFileName: 'giphy.gif',
+    imgFileName: 'giphy.jpg',
     imgType: 'image/gif',
-    imgName: 'Cogni gif Solana NFT',
-    description: 'Test for Solana gif NFTs on Cogni Wallet',
+    imgName: 'Cogni Solana Gif NFT',
+    description: 'Test for Solana Gif NFTs on Cogni Wallet',
     attributes: [
         {trait_type: 'Hera', value: 'Pheri'},
         {trait_type: 'Type', value: 'Funny'},
