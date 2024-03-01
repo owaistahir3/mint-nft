@@ -84,7 +84,6 @@ async function mintNft(metadataUri: string, name: string, sellerFee: number, sym
     }
     ,{ commitment: "finalized" }
     );
-    console.log(`   Success!🎉`);
     console.log(`   Minted NFT: https://explorer.solana.com/address/${nft.address}?cluster=devnet`);
 
 }
